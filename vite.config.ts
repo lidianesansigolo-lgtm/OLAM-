@@ -8,7 +8,10 @@ import { TanStackRouterVite } from '@tanstack/router-plugin/vite'
 
 const config = defineConfig({
   plugins: [
-    TanStackRouterVite(), // <--- ADICIONADO AQUI PARA GERAR AS ROTAS
+    TanStackRouterVite({
+      generatedRouteTree: './routeTree.gen.ts', // <--- Força o arquivo a ser criado na raiz
+      routesDirectory: './src/routes',          // <--- Onde estão suas páginas
+    }),
     viteTsConfigPaths({
       projects: ['./tsconfig.json'],
     }),
