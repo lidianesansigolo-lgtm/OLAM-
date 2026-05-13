@@ -1,4 +1,4 @@
-@import "tailwindcss" source("../");
+@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,opsz,wght@0,14..40,300;0,14..40,400;0,14..40,500;1,14..40,300;1,14..40,400&family=Jost:wght@200;300;400;500&display=swap');
 
 :root {
