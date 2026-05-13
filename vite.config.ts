@@ -6,11 +6,13 @@ import tailwindcss from '@tailwindcss/vite'
 import netlify from '@netlify/vite-plugin-tanstack-start'
 import { TanStackRouterVite } from '@tanstack/router-plugin/vite'
 
-const config = defineConfig({
+export default defineConfig({
   plugins: [
+    // Configuramos o plugin para encontrar suas rotas e gerar o arquivo na raiz
     TanStackRouterVite({
-      generatedRouteTree: './routeTree.gen.ts', // <--- Força o arquivo a ser criado na raiz
-      routesDirectory: './src/routes',          // <--- Onde estão suas páginas
+      routesDirectory: './src/routes',      // Verifique se suas rotas estão em src/routes
+      generatedRouteTree: './routeTree.gen.ts', 
+      quoteStyle: 'single',
     }),
     viteTsConfigPaths({
       projects: ['./tsconfig.json'],
@@ -21,5 +23,3 @@ const config = defineConfig({
     viteReact(),
   ],
 })
-
-export default config
