@@ -4,9 +4,11 @@ import viteReact from '@vitejs/plugin-react'
 import viteTsConfigPaths from 'vite-tsconfig-paths'
 import tailwindcss from '@tailwindcss/vite'
 import netlify from '@netlify/vite-plugin-tanstack-start'
+import { TanStackRouterVite } from '@tanstack/router-plugin/vite'
 
 const config = defineConfig({
   plugins: [
+    TanStackRouterVite(), // <--- ADICIONADO AQUI PARA GERAR AS ROTAS
     viteTsConfigPaths({
       projects: ['./tsconfig.json'],
     }),
